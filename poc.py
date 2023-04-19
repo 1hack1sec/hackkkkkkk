@@ -1,16 +1,15 @@
-import string
-import itertools
+import random
 
-# Büyük harfler ve sayılar
-characters = string.ascii_uppercase + string.digits
+characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+combinations = set()
 
-# Türk alfabesi karakterleri
-turkish_chars = 'ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ'
+for combo in itertools.product(characters, repeat=6):
+    combinations.add(''.join(combo))
 
-# Tüm karakterler
-all_chars = characters + turkish_chars
+combinations = random.sample(combinations, len(combinations))
 
-# Dosya adı
-with open('combinations.txt', 'w', encoding='utf-8') as file:
-    for combination in combinations:
-        file.write(''.join(combination) + '\n')
+with open('kombinasyonlar.txt', 'w') as file:
+    for combo in combinations:
+        file.write(combo + '\n')
+
+print(f"{len(combinations)} adet kombinasyon kaydedildi.")
