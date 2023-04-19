@@ -11,7 +11,6 @@ turkish_chars = 'ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ'
 all_chars = characters + turkish_chars
 
 # Dosya adı
-filename = 'combinations.txt'
-
- with open('combinations.txt', 'w', encoding='utf-8') as file:
-     file.write(''.join(combination) + '\n')
+with open('combinations.txt', 'w', encoding='utf-8') as file:
+    for combination in combinations:
+        file.write(''.join(combination) + '\n')
