@@ -1,15 +1,9 @@
 import random
+import string
 
-characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-combinations = set()
+N = 1000000000
 
-for combo in itertools.product(characters, repeat=6):
-    combinations.add(''.join(combo))
-
-combinations = random.sample(combinations, len(combinations))
-
-with open('kombinasyonlar.txt', 'w') as file:
-    for combo in combinations:
-        file.write(combo + '\n')
-
-print(f"{len(combinations)} adet kombinasyon kaydedildi.")
+with open('output.txt', 'w') as f:
+    for i in range(N):
+        pnrNo = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+        f.write(pnrNo + '\n')
