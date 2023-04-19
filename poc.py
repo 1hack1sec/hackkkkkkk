@@ -5,7 +5,7 @@ async def make_request(session, pnr_no):
     url = 'https://web.flypgs.com/pegasus/pnr-search/filtered/secured'
     payload = {"pnrNo": pnr_no, "surname": "ASLANBAŞ", "deleteOptionalSsr": True, "filter": "MMB"}
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0",
+        "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0",
         "Accept": "application/json, text/plain, */*",
         "Accept-Language": "tr",
         "Accept-Encoding": "gzip, deflate",
