@@ -13,9 +13,5 @@ all_chars = characters + turkish_chars
 # Dosya adı
 filename = 'combinations.txt'
 
-# Dosyayı aç
-with open(filename, 'w') as file:
-
-    # Tüm kombinasyonları hesapla ve dosyaya yaz
-    for combination in itertools.permutations(all_chars, 6):
-        file.write(''.join(combination) + '\n')
+ with open('combinations.txt', 'w', encoding='utf-8') as file:
+     file.write(''.join(combination) + '\n')
