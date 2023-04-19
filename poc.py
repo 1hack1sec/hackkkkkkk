@@ -20,6 +20,10 @@ async def make_request(session, pnr_no, file):
     async with session.post(url, json=payload, headers=headers) as response:
         print(f"{pnr_no} - {response.status}")
         file.write(f"{pnr_no} - {response.status}\n")
+        if response.status == 200:
+            await session.close()
+            await asyncio.sleep(1)
+            raise SystemExit
 
 async def main():
     async with aiohttp.ClientSession() as session:
