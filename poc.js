@@ -10,7 +10,7 @@ let start = Date.now();
 let requestsPerMinute = 0;
 
 const sendRequest = (value) => {
-  axios.post('https://web.flypgs.com/pegasus/pnr-search/filtered/secured', {
+  axios.post('', {
     pnrNo: value.trim(),
     surname: 'ASLANBAŞ'
   }, {
